@@ -1,7 +1,6 @@
-# Heroku Buildpack for Ruby
-![ruby](https://cloud.githubusercontent.com/assets/51578/13712725/3c6b3368-e793-11e5-83c1-728440111358.png)
+# Buildpack for Ruby 2.0.0
 
-This is a [Heroku Buildpack](http://devcenter.heroku.com/articles/buildpacks) for Ruby, Rack, and Rails apps. It uses [Bundler](https://bundler.io) for dependency management.
+This is a Buildpack for Ruby, Rack, and Rails apps. It uses [Bundler](https://bundler.io) for dependency management.
 
 This buildpack requires 64-bit Linux.
 
@@ -14,7 +13,7 @@ Example Usage:
     $ ls
     Gemfile Gemfile.lock
 
-    $ heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
+    $ heroku create --buildpack https://github.com/danjrichards/buildpack-ruby2.git
 
     $ git push heroku master
     ...

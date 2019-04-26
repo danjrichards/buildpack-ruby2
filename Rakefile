@@ -3,7 +3,7 @@ require "tmpdir"
 require 'hatchet/tasks'
 ENV["BUILDPACK_LOG_FILE"] ||= "tmp/buildpack.log"
 
-S3_BUCKET_NAME  = "heroku-buildpack-ruby"
+S3_BUCKET_NAME  = "buildpack-ruby2"
 VENDOR_URL      = "https://s3.amazonaws.com/#{S3_BUCKET_NAME}"
 
 def s3_tools_dir
@@ -107,12 +107,12 @@ namespace :buildpack do
 
   def latest_release
     @latest_release ||= begin
-      buildpack_name = "heroku/ruby"
+      buildpack_name = "danjrichards/ruby2"
       response = connection.get(path: "buildpacks/#{buildpack_name}/revisions")
       releases = JSON.parse(response.body)
 
       # {
-      #   "tar_link": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/ruby-v84.tgz",
+      #   "tar_link": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/danjrichards/ruby2-v84.tgz",
       #   "created_at": "2013-11-06T18:55:04Z",
       #   "published_by": "richard@heroku.com",
       #   "id": 84
@@ -255,7 +255,7 @@ FILE
   end
 
   task :publish do
-    buildpack_name = "heroku/ruby"
+    buildpack_name = "danjrichards/ruby2"
     puts "Publishing #{buildpack_name} buildpack"
 
     print "Enter your yubikey > "
